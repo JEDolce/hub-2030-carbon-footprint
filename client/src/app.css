@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+b {
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    line-height: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #26658c;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.navbar img {
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li a:hover {
+    color: #777;
+}
+
+.navbar ul li a svg {
+    margin-right: 5px;
+}
+
+.logout {
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    line-height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logout:hover {
+    color: #777;
+}
+
+.navbar svg {
+    margin-right: 5px;
+}
+
+/* Main Container */
+.App {
+    min-height: calc(100vh - 10vh - 2vh);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.App::before {
+    content: "";
+    background-image: url("assets/fondo-tuberias.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.heading p {
+    color: #828282;
+}
+
+.card {
+    /* Puse relative solo por el mensaje de validación */
+    position: relative;
+    min-width: 60rem;
+    max-width: 500px;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
+}
+
+.step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cardLeft,
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardLeft {
+    margin: 1rem 1.5rem 1rem 0rem;
+}
+
+.cardRight {
+    margin: 1rem 0;
+}
+
+.cardCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 1rem 0 1rem;
+}
+
+.line {
+    width: 1.5px;
+    height: 70%;
+    background-color: #26658c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.inputsContainer {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 40%;
+    height: 35px;
+    border: 1px solid #26658c;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Login Form */
+.form,
+.content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.form-group label {
+    text-align: left;
+    display: block;
+    margin: 0 0 5px 3px;
+}
+
+/* Results */
+.chart {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.resultLeftContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7rem;
+    font-size: 1.1rem;
+}
+
+.left {
+    height: 100vh;
+    flex: 2;
+    position: relative;
+    background-color: #eeeeee;
+}
+
+.right {
+    height: 90vh;
+    flex: 7;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pieChart {
+    width: 400px;
+    height: 300px;
+}
+
+/* Buttons */
+.button-area {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+}
+
+.recalcBtn {
+    padding: 1rem 0 1rem 0;
+    width: 15vw;
+    align-self: center;
+    margin-top: 5rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #26658c;
+    border-radius: 5px;
+    background: #26658c;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    appearance: button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn svg {
+    margin-right: 8px;
+}
+
+.btn-reverse {
+    background: #fff;
+    color: #000;
+}
+
+.btn-block {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #323232;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    color: #eee;
+}
+
+#date {
+    font-size: 0.75rem;
+}
+
+/* Spinner */
+.loadingSpinnerContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingSpinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: #000 transparent #555 transparent;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+/* Tabla */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #26658c;
+    color: white;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Validation */
+.validate {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    display: none;
+}
+
+input:invalid~.validate {
+    /* Que se ubique en el margen inferior de card */
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    display: block;
+}
+
+input:invalid[focus="true"] {
+    border: 2px solid red;
+}
+
+/* Animations */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 1400px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p,
+    span,
+    li,
+    label,
+    .logout {
+        font-size: 14px;
+        line-height: 1.25rem;
+    }
+
+    img {
+        height: 50px;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .step-title {
+        font-size: 1.5rem;
+    }
+
+    .cardCenter {
+        margin: 0 0.75rem 0 0.75rem;
+    }
+
+    .cardLeft {
+        margin: 0.75rem 1rem 0.5rem 0rem;
+    }
+
+    .cardRight {
+        margin: 0.75rem 0 0.5rem 0rem;
+    }
+
+    .inputsContainer {
+        width: 80%;
+    }
+
+    input {
+        font-size: 11px;
+    }
+
+    button,
+    .link {
+        font-size: 16px;
+    }
+
+    .resultLeftContainer {
+        padding-top: 5rem;
+        font-size: 1rem;
+    }
+
+    table {
+        width: 70%;
+    }
+
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    .copyright,
+    #date {
+        font-size: 0.6rem;
+    }
+
+    .validate {
+
+        font-size: 12px;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .form {
+        width: 90%;
+    }
+
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .heading p {
+        font-size: 1.5rem;
+    }
+}

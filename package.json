@@ -1,0 +1,31 @@
+{
+  "name": "hub-2030-carbon-footprint",
+  "version": "1.0.0",
+  "description": "Carbon Footprint App for HUB 2030",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "carbon-footprint",
+    "hub-2030",
+    "login-hub",
+    "app"
+  ],
+  "author": "JEDolce",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  }
+}

@@ -1,0 +1,54 @@
+Start postgres server:
+    sudo service postgresql start
+
+Conectarse a postgres con usuario jedolce:
+    psql -U jedolce -h 127.0.0.1 -d postgres        pass: jedolce
+
+Conectarse a postgres con usuario postgres:
+    sudo -u postgres psql
+
+Listar bases de datos:
+    \l
+
+Seleccionar base de datos:
+    \c <db-name>
+
+Listar tablas en bases de datos:
+    \dt
+
+Salir de postgres:
+    \q
+
+Salir de tabla:
+    q
+
+Crear base de datos / tabla:
+    CREATE DATABASE <db-name>;
+
+    CREATE TABLE <table-name>;
+
+    sudo -u postgres createdb <db-name>
+
+Eliminar una base de datos:
+    DROP DATABASE <db-name>;
+
+    DROP TABLE <table-name>;
+
+Cabiar de owner base de datos / tabla:
+    ALTER DATABASE <db-name> OWNER to <new-owner>
+
+    ALTER TABLE <table-name> OWNER to <new-owner>
+
+Proporcionar permisos:
+    grant all privileges on database <db-name> to <username>
+
+Creating user:
+    sudo -u postgres createuser <username>
+
+Giving the user a password:
+    alter user <username> with encrypted password '<password>'
+
+
+
+
+    

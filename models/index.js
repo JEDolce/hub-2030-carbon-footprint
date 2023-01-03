@@ -3,7 +3,8 @@ const { Sequelize, DataTypes } = require('sequelize');
 const { dbConfig } = require("../config/config");
 
 const sequelize = new Sequelize(
-    `postgres://${dbConfig.USER}:${dbConfig.PASSWORD}@${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+    // `postgres://${dbConfig.USER}:${dbConfig.PASSWORD}@${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, 
+    process.env.POSTGRES_SERVER, {
     dialect: "postgres"
 })
 

@@ -2,7 +2,7 @@ const dotenv = require('dotenv').config();
 
 const dbConfig = {
     USER: process.env.PGUSER || "jedolce",
-    PASSWORD: process.env.PGUPASSWORD || "jedolce",
+    PASSWORD: process.env.PGPASSWORD || "jedolce",
     HOST: process.env.PGHOST || 'localhost',
     PORT: process.env.PGPORT || 5432,
     DB: process.env.PGDATABASE || 'hublogindb',
